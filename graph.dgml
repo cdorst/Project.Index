@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph Title="SourceCodeRepositoryGraph" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+	<Nodes>
+		<Node Id="CDorst.DevOps.Code.EntityModel.Common.Interfaces.Entity" />
+		<Node Id="CDorst.DevOps.Code.EntityModel.Common.Interfaces.StaticEntity" />
+		<Node Id="CDorst.DevOps.Code.EntityModel.Strings.Ascii" />
+		<Node Id="CDorst.DevOps.Code.EntityModel.Common.Metapackages.EntityFrameworkCore" />
+	</Nodes>
+	<Links>
+		<Link Source="CDorst.DevOps.Code.EntityModel.Common.Interfaces.Entity" Target="CDorst.DevOps.Code.EntityModel.Common.Interfaces.StaticEntity" />
+		<Link Source="CDorst.DevOps.Code.EntityModel.Common.Interfaces.StaticEntity" Target="CDorst.DevOps.Code.EntityModel.Strings.Ascii" />
+	</Links>
+</DirectedGraph>
+

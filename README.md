@@ -1,7 +1,7 @@
 # Project.Index
 ## Description
 
-This project is a composition of other projects, each located within its own repository within the CDorst GitHub account. The index below lists each repository. Repository names link to each project's GitHub repository. DevOps pipeline status badges are shown alongside each repository name.
+The table below lists each code-generated repository in the github.com/CDorst account. Repository names link to each project's GitHub repository. DevOps-pipeline status badges are shown alongside each repository name.
 
 Each of the repositories in this index is treated as a node on a graph. Package dependencies between nodes (e.g. npm or NuGet) are treated as links. A .dgml file of the resulting directed acyclic graph is located here: [graph.dgml](graph.dgml)
 

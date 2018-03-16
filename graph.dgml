@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <DirectedGraph Title="SourceCodeRepositoryGraph" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
 	<Nodes>
-		<Node Id="CDorst.Cloud.Azure.Storage.Connection.Functions.GetConfigurationManager" />
+		<Node Id="CDorst.Cloud.Azure.Storage.Connection.Functions.GetCloudStorageAccount" />
 		<Node Id="CDorst.Cloud.Azure.Storage.Connection.Functions.GetConnectionString" />
 		<Node Id="CDorst.DevOps.Code.EntityModel.Common.Interfaces.Entity" />
 		<Node Id="CDorst.DevOps.Code.EntityModel.Common.Interfaces.StaticEntity" />
@@ -11,7 +11,7 @@
 		<Node Id="CDorst.DevOps.Code.EntityModel.Common.Metapackages.EntityFrameworkCore" />
 	</Nodes>
 	<Links>
-		<Link Source="CDorst.Cloud.Azure.Storage.Connection.Metapackages.ConfigurationManager" Target="CDorst.Cloud.Azure.Storage.Connection.Functions.GetConfigurationManager" />
+		<Link Source="CDorst.Cloud.Azure.Storage.Connection.Metapackages.ConfigurationManager" Target="CDorst.Cloud.Azure.Storage.Connection.Functions.GetCloudStorageAccount" />
 		<Link Source="CDorst.DevOps.Code.EntityModel.Common.Interfaces.Entity" Target="CDorst.DevOps.Code.EntityModel.Common.Interfaces.StaticEntity" />
 		<Link Source="CDorst.DevOps.Code.EntityModel.Common.Interfaces.StaticEntity" Target="CDorst.DevOps.Code.EntityModel.Strings.Ascii" />
 		<Link Source="CDorst.DevOps.Code.EntityModel.Common.Interfaces.StaticEntity" Target="CDorst.DevOps.Code.EntityModel.Strings.Unicode" />

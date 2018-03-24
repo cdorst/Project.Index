@@ -30,9 +30,9 @@
 		<Link Source="CDorst.DevOps.Build.AppVeyor.AzureStorageTableLedger" Target="CDorst.DevOps.Build.AppVeyor.AzureStorageTableLedger.Builder" />
 		<Link Source="CDorst.DevOps.Build.AppVeyor.AzureStorageTableLedger" Target="CDorst.DevOps.Build.AppVeyor.GetAzureTable" />
 		<Link Source="CDorst.DevOps.Build.AppVeyor.AzureStorageTableLedger" Target="CDorst.DevOps.Build.AppVeyor.GetBuildRecord" />
-		<Link Source="CDorst.DevOps.Build.AppVeyor.AzureStorageTableLedger" Target="CDorst.DevOps.Build.AppVeyor.GetRepositoryVersionRecord" />
 		<Link Source="CDorst.DevOps.Build.AppVeyor.AzureStorageTableLedger.Builder" Target="CDorst.DevOps.Build.AppVeyor.AddBuild" />
 		<Link Source="CDorst.DevOps.Build.AppVeyor.AzureStorageTableVersionLedger" Target="CDorst.DevOps.Build.AppVeyor.AzureStorageTableVersionLedger.Builder" />
+		<Link Source="CDorst.DevOps.Build.AppVeyor.AzureStorageTableVersionLedger" Target="CDorst.DevOps.Build.AppVeyor.GetRepositoryVersionRecord" />
 		<Link Source="CDorst.DevOps.Build.AppVeyor.AzureStorageTableVersionLedger.Builder" Target="CDorst.DevOps.Build.AppVeyor.AddRepositoryVersion" />
 		<Link Source="CDorst.DevOps.Build.AppVeyor.GetAzureTable" Target="CDorst.DevOps.Build.AppVeyor.AddBuild" />
 		<Link Source="CDorst.DevOps.Build.AppVeyor.GetAzureTable" Target="CDorst.DevOps.Build.AppVeyor.AddRepositoryVersion" />

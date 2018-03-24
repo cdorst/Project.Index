@@ -11,9 +11,13 @@
 		<Node Id="CDorst.Azure.Storage.Table.GetAzureTable" />
 		<Node Id="CDorst.DevOps.Build.AppVeyor.AzureStorageTableLedger" />
 		<Node Id="CDorst.DevOps.Build.AppVeyor.AzureStorageTableLedger.Builder" />
+		<Node Id="CDorst.DevOps.Build.AppVeyor.AzureStorageTableVersionLedger" />
+		<Node Id="CDorst.DevOps.Build.AppVeyor.AzureStorageTableVersionLedger.Builder" />
 		<Node Id="CDorst.DevOps.Build.AppVeyor.GetAzureTable" />
 		<Node Id="CDorst.DevOps.Build.AppVeyor.AddBuild" />
-		<Node Id="CDorst.DevOps.Build.AppVeyor.GetBuildDependencyString" />
+		<Node Id="CDorst.DevOps.Build.AppVeyor.GetBuildRecord" />
+		<Node Id="CDorst.DevOps.Build.AppVeyor.AddRepositoryVersion" />
+		<Node Id="CDorst.DevOps.Build.AppVeyor.GetRepositoryVersionRecord" />
 		<Node Id="CDorst.DevOps.Code.EntityModel.Common.Metapackages.EntityFrameworkCore" />
 	</Nodes>
 	<Links>
@@ -25,10 +29,15 @@
 		<Link Source="CDorst.Azure.Storage.Table.GetTableReference" Target="CDorst.Azure.Storage.Table.GetOrCreateTableReference" />
 		<Link Source="CDorst.DevOps.Build.AppVeyor.AzureStorageTableLedger" Target="CDorst.DevOps.Build.AppVeyor.AzureStorageTableLedger.Builder" />
 		<Link Source="CDorst.DevOps.Build.AppVeyor.AzureStorageTableLedger" Target="CDorst.DevOps.Build.AppVeyor.GetAzureTable" />
-		<Link Source="CDorst.DevOps.Build.AppVeyor.AzureStorageTableLedger" Target="CDorst.DevOps.Build.AppVeyor.GetBuildDependencyString" />
+		<Link Source="CDorst.DevOps.Build.AppVeyor.AzureStorageTableLedger" Target="CDorst.DevOps.Build.AppVeyor.GetBuildRecord" />
+		<Link Source="CDorst.DevOps.Build.AppVeyor.AzureStorageTableLedger" Target="CDorst.DevOps.Build.AppVeyor.GetRepositoryVersionRecord" />
 		<Link Source="CDorst.DevOps.Build.AppVeyor.AzureStorageTableLedger.Builder" Target="CDorst.DevOps.Build.AppVeyor.AddBuild" />
+		<Link Source="CDorst.DevOps.Build.AppVeyor.AzureStorageTableVersionLedger" Target="CDorst.DevOps.Build.AppVeyor.AzureStorageTableVersionLedger.Builder" />
+		<Link Source="CDorst.DevOps.Build.AppVeyor.AzureStorageTableVersionLedger.Builder" Target="CDorst.DevOps.Build.AppVeyor.AddRepositoryVersion" />
 		<Link Source="CDorst.DevOps.Build.AppVeyor.GetAzureTable" Target="CDorst.DevOps.Build.AppVeyor.AddBuild" />
-		<Link Source="CDorst.DevOps.Build.AppVeyor.GetAzureTable.AzureTableGetter" Target="CDorst.DevOps.Build.AppVeyor.GetBuildDependencyString" />
+		<Link Source="CDorst.DevOps.Build.AppVeyor.GetAzureTable" Target="CDorst.DevOps.Build.AppVeyor.AddRepositoryVersion" />
+		<Link Source="CDorst.DevOps.Build.AppVeyor.GetAzureTable" Target="CDorst.DevOps.Build.AppVeyor.GetBuildRecord" />
+		<Link Source="CDorst.DevOps.Build.AppVeyor.GetAzureTable" Target="CDorst.DevOps.Build.AppVeyor.GetRepositoryVersionRecord" />
 		<Link Source="CDorst.DevOps.Code.EntityModel.Common.Interfaces.Entity" Target="CDorst.DevOps.Code.EntityModel.Common.Interfaces.StaticEntity" />
 	</Links>
 </DirectedGraph>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <DirectedGraph Title="SourceCodeRepositoryGraph" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
 	<Nodes>
-		<Node Id="CDorst.DevOps.Code.EntityModel.Common.Interfaces.Entity" />
-		<Node Id="CDorst.DevOps.Code.EntityModel.Common.Interfaces.StaticEntity" />
+		<Node Id="CDorst.DevOps.Code.Entities.Interfaces.Entity" />
+		<Node Id="CDorst.DevOps.Code.Entities.Interfaces.StaticEntity" />
 		<Node Id="CDorst.Azure.Storage.Connection.GetConnectionString" />
 		<Node Id="CDorst.Azure.Storage.Connection.GetCloudStorageAccount" />
 		<Node Id="CDorst.Azure.Storage.Table.GetTableClient" />
@@ -18,18 +18,25 @@
 		<Node Id="CDorst.DevOps.Build.AppVeyor.GetBuildRecord" />
 		<Node Id="CDorst.DevOps.Build.AppVeyor.AddRepositoryVersion" />
 		<Node Id="CDorst.DevOps.Build.AppVeyor.GetRepositoryVersionRecord" />
-		<Node Id="CDorst.DevOps.Code.EntityModel.Common.Metapackages.EntityFrameworkCore" />
+		<Node Id="CDorst.DevOps.Code.Entities.EntityTypeLedger" />
+		<Node Id="CDorst.DevOps.Code.Entities.EntityTypeLedger.Builder" />
+		<Node Id="CDorst.DevOps.Code.Entities.GetAzureTable" />
+		<Node Id="CDorst.DevOps.Code.Entities.AddEntityTypeRecord" />
+		<Node Id="CDorst.DevOps.Code.Entities.GetEntityTypeRecord" />
+		<Node Id="CDorst.DevOps.Code.Entities.Metapackages.EntityFrameworkCore" />
 	</Nodes>
 	<Links>
 		<Link Source="CDorst.Azure.Storage.Connection.GetCloudStorageAccount" Target="CDorst.Azure.Storage.Table.GetTableClient" />
 		<Link Source="CDorst.Azure.Storage.Connection.GetConnectionString" Target="CDorst.Azure.Storage.Table.GetAzureTable" />
 		<Link Source="CDorst.Azure.Storage.Table.GetAzureTable" Target="CDorst.DevOps.Build.AppVeyor.GetAzureTable" />
+		<Link Source="CDorst.Azure.Storage.Table.GetAzureTable" Target="CDorst.DevOps.Code.Entities.GetAzureTable" />
 		<Link Source="CDorst.Azure.Storage.Table.GetOrCreateTableReference" Target="CDorst.Azure.Storage.Table.GetAzureTable" />
 		<Link Source="CDorst.Azure.Storage.Table.GetTableClient" Target="CDorst.Azure.Storage.Table.GetTableReference" />
 		<Link Source="CDorst.Azure.Storage.Table.GetTableReference" Target="CDorst.Azure.Storage.Table.GetOrCreateTableReference" />
 		<Link Source="CDorst.DevOps.Build.AppVeyor.AzureStorageTableLedger" Target="CDorst.DevOps.Build.AppVeyor.AzureStorageTableLedger.Builder" />
 		<Link Source="CDorst.DevOps.Build.AppVeyor.AzureStorageTableLedger" Target="CDorst.DevOps.Build.AppVeyor.GetAzureTable" />
 		<Link Source="CDorst.DevOps.Build.AppVeyor.AzureStorageTableLedger" Target="CDorst.DevOps.Build.AppVeyor.GetBuildRecord" />
+		<Link Source="CDorst.DevOps.Build.AppVeyor.AzureStorageTableLedger" Target="CDorst.DevOps.Code.Entities.GetAzureTable" />
 		<Link Source="CDorst.DevOps.Build.AppVeyor.AzureStorageTableLedger.Builder" Target="CDorst.DevOps.Build.AppVeyor.AddBuild" />
 		<Link Source="CDorst.DevOps.Build.AppVeyor.AzureStorageTableVersionLedger" Target="CDorst.DevOps.Build.AppVeyor.AzureStorageTableVersionLedger.Builder" />
 		<Link Source="CDorst.DevOps.Build.AppVeyor.AzureStorageTableVersionLedger" Target="CDorst.DevOps.Build.AppVeyor.GetRepositoryVersionRecord" />
@@ -38,7 +45,12 @@
 		<Link Source="CDorst.DevOps.Build.AppVeyor.GetAzureTable" Target="CDorst.DevOps.Build.AppVeyor.AddRepositoryVersion" />
 		<Link Source="CDorst.DevOps.Build.AppVeyor.GetAzureTable" Target="CDorst.DevOps.Build.AppVeyor.GetBuildRecord" />
 		<Link Source="CDorst.DevOps.Build.AppVeyor.GetAzureTable" Target="CDorst.DevOps.Build.AppVeyor.GetRepositoryVersionRecord" />
-		<Link Source="CDorst.DevOps.Code.EntityModel.Common.Interfaces.Entity" Target="CDorst.DevOps.Code.EntityModel.Common.Interfaces.StaticEntity" />
+		<Link Source="CDorst.DevOps.Code.Entities.EntityTypeLedger" Target="CDorst.DevOps.Code.Entities.EntityTypeLedger.Builder" />
+		<Link Source="CDorst.DevOps.Code.Entities.EntityTypeLedger" Target="CDorst.DevOps.Code.Entities.GetEntityTypeRecord" />
+		<Link Source="CDorst.DevOps.Code.Entities.EntityTypeLedger.Builder" Target="CDorst.DevOps.Code.Entities.AddEntityTypeRecord" />
+		<Link Source="CDorst.DevOps.Code.Entities.GetAzureTable" Target="CDorst.DevOps.Code.Entities.AddEntityTypeRecord" />
+		<Link Source="CDorst.DevOps.Code.Entities.GetAzureTable" Target="CDorst.DevOps.Code.Entities.GetEntityTypeRecord" />
+		<Link Source="CDorst.DevOps.Code.Entities.Interfaces.Entity" Target="CDorst.DevOps.Code.Entities.Interfaces.StaticEntity" />
 	</Links>
 </DirectedGraph>
 

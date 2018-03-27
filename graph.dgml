@@ -23,11 +23,16 @@
 		<Node Id="CDorst.DevOps.Code.Entities.GetAzureTable" />
 		<Node Id="CDorst.DevOps.Code.Entities.AddEntityTypeRecord" />
 		<Node Id="CDorst.DevOps.Code.Entities.GetEntityTypeRecord" />
+		<Node Id="CDorst.Azure.Storage.Metapackage" />
 		<Node Id="CDorst.DevOps.Code.Entities.Metapackages.EntityFrameworkCore" />
 	</Nodes>
 	<Links>
 		<Link Source="CDorst.Azure.Storage.Connection.GetCloudStorageAccount" Target="CDorst.Azure.Storage.Table.GetTableClient" />
 		<Link Source="CDorst.Azure.Storage.Connection.GetConnectionString" Target="CDorst.Azure.Storage.Table.GetAzureTable" />
+		<Link Source="CDorst.Azure.Storage.Metapackage" Target="CDorst.Azure.Storage.Connection.GetCloudStorageAccount" />
+		<Link Source="CDorst.Azure.Storage.Metapackage" Target="CDorst.DevOps.Build.AppVeyor.AzureStorageTableLedger" />
+		<Link Source="CDorst.Azure.Storage.Metapackage" Target="CDorst.DevOps.Build.AppVeyor.AzureStorageTableVersionLedger" />
+		<Link Source="CDorst.Azure.Storage.Metapackage" Target="CDorst.DevOps.Code.Entities.EntityTypeLedger" />
 		<Link Source="CDorst.Azure.Storage.Table.GetAzureTable" Target="CDorst.DevOps.Build.AppVeyor.GetAzureTable" />
 		<Link Source="CDorst.Azure.Storage.Table.GetAzureTable" Target="CDorst.DevOps.Code.Entities.GetAzureTable" />
 		<Link Source="CDorst.Azure.Storage.Table.GetOrCreateTableReference" Target="CDorst.Azure.Storage.Table.GetAzureTable" />

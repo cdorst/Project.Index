@@ -29,6 +29,30 @@
 		<Node Id="CDorst.DevOps.Code.Entities.GetAzureTable" />
 		<Node Id="CDorst.DevOps.Code.Entities.AddEntityTypeRecord" />
 		<Node Id="CDorst.DevOps.Code.Entities.GetEntityTypeRecord" />
+		<Node Id="CDorst.Addresses.States" />
+		<Node Id="CDorst.Addresses.States.DatabaseContext" />
+		<Node Id="CDorst.Addresses.States.ApiController" />
+		<Node Id="CDorst.Addresses.ZipCodes" />
+		<Node Id="CDorst.Addresses.ZipCodes.DatabaseContext" />
+		<Node Id="CDorst.Addresses.ZipCodes.ApiController" />
+		<Node Id="CDorst.Addresses.StreetAddressLines" />
+		<Node Id="CDorst.Addresses.StreetAddressLines.DatabaseContext" />
+		<Node Id="CDorst.Addresses.StreetAddressLines.ApiController" />
+		<Node Id="CDorst.Addresses.StreetAddresses" />
+		<Node Id="CDorst.Addresses.StreetAddresses.DatabaseContext" />
+		<Node Id="CDorst.Addresses.StreetAddresses.ApiController" />
+		<Node Id="CDorst.Addresses.Cities" />
+		<Node Id="CDorst.Addresses.Cities.DatabaseContext" />
+		<Node Id="CDorst.Addresses.Cities.ApiController" />
+		<Node Id="CDorst.Addresses.StateCities" />
+		<Node Id="CDorst.Addresses.StateCities.DatabaseContext" />
+		<Node Id="CDorst.Addresses.StateCities.ApiController" />
+		<Node Id="CDorst.Addresses.StateCityZips" />
+		<Node Id="CDorst.Addresses.StateCityZips.DatabaseContext" />
+		<Node Id="CDorst.Addresses.StateCityZips.ApiController" />
+		<Node Id="CDorst.Addresses.Addresses" />
+		<Node Id="CDorst.Addresses.Addresses.DatabaseContext" />
+		<Node Id="CDorst.Addresses.Addresses.ApiController" />
 		<Node Id="CDorst.Entities.FooBars" />
 		<Node Id="CDorst.Entities.FooBars.DatabaseContext" />
 		<Node Id="CDorst.Entities.FooBars.ApiController" />
@@ -42,6 +66,29 @@
 		<Node Id="CDorst.DevOps.Code.Entities.Metapackages.AnnotatedEntityFramework" />
 	</Nodes>
 	<Links>
+		<Link Source="CDorst.Addresses.Addresses" Target="CDorst.Addresses.Addresses.DatabaseContext" />
+		<Link Source="CDorst.Addresses.Addresses.DatabaseContext" Target="CDorst.Addresses.Addresses.ApiController" />
+		<Link Source="CDorst.Addresses.Cities" Target="CDorst.Addresses.Cities.DatabaseContext" />
+		<Link Source="CDorst.Addresses.Cities.DatabaseContext" Target="CDorst.Addresses.Cities.ApiController" />
+		<Link Source="CDorst.Addresses.Cities.DatabaseContext" Target="CDorst.Addresses.StateCities.DatabaseContext" />
+		<Link Source="CDorst.Addresses.StateCities" Target="CDorst.Addresses.StateCities.DatabaseContext" />
+		<Link Source="CDorst.Addresses.StateCities.DatabaseContext" Target="CDorst.Addresses.StateCities.ApiController" />
+		<Link Source="CDorst.Addresses.StateCities.DatabaseContext" Target="CDorst.Addresses.StateCityZips.DatabaseContext" />
+		<Link Source="CDorst.Addresses.StateCityZips" Target="CDorst.Addresses.StateCityZips.DatabaseContext" />
+		<Link Source="CDorst.Addresses.StateCityZips.DatabaseContext" Target="CDorst.Addresses.Addresses.DatabaseContext" />
+		<Link Source="CDorst.Addresses.StateCityZips.DatabaseContext" Target="CDorst.Addresses.StateCityZips.ApiController" />
+		<Link Source="CDorst.Addresses.States" Target="CDorst.Addresses.States.DatabaseContext" />
+		<Link Source="CDorst.Addresses.States.DatabaseContext" Target="CDorst.Addresses.States.ApiController" />
+		<Link Source="CDorst.Addresses.States.DatabaseContext" Target="CDorst.Addresses.ZipCodes.DatabaseContext" />
+		<Link Source="CDorst.Addresses.StreetAddresses" Target="CDorst.Addresses.StreetAddresses.DatabaseContext" />
+		<Link Source="CDorst.Addresses.StreetAddresses.DatabaseContext" Target="CDorst.Addresses.Cities.DatabaseContext" />
+		<Link Source="CDorst.Addresses.StreetAddresses.DatabaseContext" Target="CDorst.Addresses.StreetAddresses.ApiController" />
+		<Link Source="CDorst.Addresses.StreetAddressLines" Target="CDorst.Addresses.StreetAddressLines.DatabaseContext" />
+		<Link Source="CDorst.Addresses.StreetAddressLines.DatabaseContext" Target="CDorst.Addresses.StreetAddresses.DatabaseContext" />
+		<Link Source="CDorst.Addresses.StreetAddressLines.DatabaseContext" Target="CDorst.Addresses.StreetAddressLines.ApiController" />
+		<Link Source="CDorst.Addresses.ZipCodes" Target="CDorst.Addresses.ZipCodes.DatabaseContext" />
+		<Link Source="CDorst.Addresses.ZipCodes.DatabaseContext" Target="CDorst.Addresses.StreetAddressLines.DatabaseContext" />
+		<Link Source="CDorst.Addresses.ZipCodes.DatabaseContext" Target="CDorst.Addresses.ZipCodes.ApiController" />
 		<Link Source="CDorst.Azure.Storage.Connection.GetCloudStorageAccount" Target="CDorst.Azure.Storage.Table.GetTableClient" />
 		<Link Source="CDorst.Azure.Storage.Connection.GetConnectionString" Target="CDorst.Azure.Storage.Table.GetAzureTable" />
 		<Link Source="CDorst.Azure.Storage.Metapackage" Target="CDorst.Azure.Storage.Connection.GetCloudStorageAccount" />
@@ -69,6 +116,14 @@
 		<Link Source="CDorst.DevOps.Code.DataAccess.Interfaces.CacheService" Target="CDorst.DevOps.Code.DataAccess.Services.CacheService" />
 		<Link Source="CDorst.DevOps.Code.DataAccess.Interfaces.Repository" Target="CDorst.DevOps.Code.DataAccess.Metapackages.ApiControllers" />
 		<Link Source="CDorst.DevOps.Code.DataAccess.Interfaces.Repository" Target="CDorst.DevOps.Code.DataAccess.Services.DataRepository" />
+		<Link Source="CDorst.DevOps.Code.DataAccess.Metapackages.ApiControllers" Target="CDorst.Addresses.Addresses.ApiController" />
+		<Link Source="CDorst.DevOps.Code.DataAccess.Metapackages.ApiControllers" Target="CDorst.Addresses.Cities.ApiController" />
+		<Link Source="CDorst.DevOps.Code.DataAccess.Metapackages.ApiControllers" Target="CDorst.Addresses.StateCities.ApiController" />
+		<Link Source="CDorst.DevOps.Code.DataAccess.Metapackages.ApiControllers" Target="CDorst.Addresses.StateCityZips.ApiController" />
+		<Link Source="CDorst.DevOps.Code.DataAccess.Metapackages.ApiControllers" Target="CDorst.Addresses.States.ApiController" />
+		<Link Source="CDorst.DevOps.Code.DataAccess.Metapackages.ApiControllers" Target="CDorst.Addresses.StreetAddresses.ApiController" />
+		<Link Source="CDorst.DevOps.Code.DataAccess.Metapackages.ApiControllers" Target="CDorst.Addresses.StreetAddressLines.ApiController" />
+		<Link Source="CDorst.DevOps.Code.DataAccess.Metapackages.ApiControllers" Target="CDorst.Addresses.ZipCodes.ApiController" />
 		<Link Source="CDorst.DevOps.Code.DataAccess.Metapackages.ApiControllers" Target="CDorst.Entities.FooBars.ApiController" />
 		<Link Source="CDorst.DevOps.Code.DataAccess.Metapackages.ApiControllers" Target="CDorst.Entities.StaticFooBars.ApiController" />
 		<Link Source="CDorst.DevOps.Code.DataAccess.Options.CacheExpiration" Target="CDorst.DevOps.Code.DataAccess.Services.CacheService" />
@@ -81,11 +136,28 @@
 		<Link Source="CDorst.DevOps.Code.Entities.Interfaces.Entity" Target="CDorst.DevOps.Code.DataAccess.Interfaces.Repository" />
 		<Link Source="CDorst.DevOps.Code.Entities.Interfaces.Entity" Target="CDorst.DevOps.Code.Entities.Interfaces.StaticEntity" />
 		<Link Source="CDorst.DevOps.Code.Entities.Interfaces.Entity" Target="CDorst.Entities.FooBars" />
+		<Link Source="CDorst.DevOps.Code.Entities.Interfaces.StaticEntity" Target="CDorst.Addresses.Addresses" />
+		<Link Source="CDorst.DevOps.Code.Entities.Interfaces.StaticEntity" Target="CDorst.Addresses.Cities" />
+		<Link Source="CDorst.DevOps.Code.Entities.Interfaces.StaticEntity" Target="CDorst.Addresses.StateCities" />
+		<Link Source="CDorst.DevOps.Code.Entities.Interfaces.StaticEntity" Target="CDorst.Addresses.StateCityZips" />
+		<Link Source="CDorst.DevOps.Code.Entities.Interfaces.StaticEntity" Target="CDorst.Addresses.States" />
+		<Link Source="CDorst.DevOps.Code.Entities.Interfaces.StaticEntity" Target="CDorst.Addresses.StreetAddresses" />
+		<Link Source="CDorst.DevOps.Code.Entities.Interfaces.StaticEntity" Target="CDorst.Addresses.StreetAddressLines" />
+		<Link Source="CDorst.DevOps.Code.Entities.Interfaces.StaticEntity" Target="CDorst.Addresses.ZipCodes" />
 		<Link Source="CDorst.DevOps.Code.Entities.Interfaces.StaticEntity" Target="CDorst.Entities.StaticFooBars" />
 		<Link Source="CDorst.DevOps.Code.Entities.Metapackages.AnnotatedEntityFramework" Target="CDorst.DevOps.Code.DataAccess.Services.CacheService" />
+		<Link Source="CDorst.DevOps.Code.Entities.Metapackages.Annotations" Target="CDorst.Addresses.Addresses" />
+		<Link Source="CDorst.DevOps.Code.Entities.Metapackages.Annotations" Target="CDorst.Addresses.Cities" />
+		<Link Source="CDorst.DevOps.Code.Entities.Metapackages.Annotations" Target="CDorst.Addresses.StateCities" />
+		<Link Source="CDorst.DevOps.Code.Entities.Metapackages.Annotations" Target="CDorst.Addresses.StateCityZips" />
+		<Link Source="CDorst.DevOps.Code.Entities.Metapackages.Annotations" Target="CDorst.Addresses.States" />
+		<Link Source="CDorst.DevOps.Code.Entities.Metapackages.Annotations" Target="CDorst.Addresses.StreetAddresses" />
+		<Link Source="CDorst.DevOps.Code.Entities.Metapackages.Annotations" Target="CDorst.Addresses.StreetAddressLines" />
+		<Link Source="CDorst.DevOps.Code.Entities.Metapackages.Annotations" Target="CDorst.Addresses.ZipCodes" />
 		<Link Source="CDorst.DevOps.Code.Entities.Metapackages.Annotations" Target="CDorst.DevOps.Code.Entities.Metapackages.AnnotatedEntityFramework" />
 		<Link Source="CDorst.DevOps.Code.Entities.Metapackages.Annotations" Target="CDorst.Entities.FooBars" />
 		<Link Source="CDorst.DevOps.Code.Entities.Metapackages.Annotations" Target="CDorst.Entities.StaticFooBars" />
+		<Link Source="CDorst.DevOps.Code.Entities.Metapackages.EntityFrameworkCore" Target="CDorst.Addresses.States.DatabaseContext" />
 		<Link Source="CDorst.DevOps.Code.Entities.Metapackages.EntityFrameworkCore" Target="CDorst.DevOps.Code.DataAccess.Interfaces.Repository" />
 		<Link Source="CDorst.DevOps.Code.Entities.Metapackages.EntityFrameworkCore" Target="CDorst.DevOps.Code.Entities.Metapackages.AnnotatedEntityFramework" />
 		<Link Source="CDorst.DevOps.Code.Entities.Metapackages.EntityFrameworkCore" Target="CDorst.Entities.FooBars.DatabaseContext" />

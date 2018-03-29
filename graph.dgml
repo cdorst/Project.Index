@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <DirectedGraph Title="SourceCodeRepositoryGraph" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
 	<Nodes>
+		<Node Id="CDorst.DevOps.Code.DataAccess.Interfaces.CacheService" />
+		<Node Id="CDorst.DevOps.Code.DataAccess.Options.CacheExpiration" />
+		<Node Id="CDorst.DevOps.Code.DataAccess.Services.CacheService" />
+		<Node Id="CDorst.DevOps.Code.DataAccess.Interfaces.Repository" />
+		<Node Id="CDorst.DevOps.Code.DataAccess.Services.DataRepository" />
+		<Node Id="CDorst.DevOps.Code.DataAccess.Services.CachedDataRepository" />
 		<Node Id="CDorst.DevOps.Code.Entities.Interfaces.Entity" />
 		<Node Id="CDorst.DevOps.Code.Entities.Interfaces.StaticEntity" />
 		<Node Id="CDorst.Azure.Storage.Connection.GetConnectionString" />
@@ -23,8 +29,17 @@
 		<Node Id="CDorst.DevOps.Code.Entities.GetAzureTable" />
 		<Node Id="CDorst.DevOps.Code.Entities.AddEntityTypeRecord" />
 		<Node Id="CDorst.DevOps.Code.Entities.GetEntityTypeRecord" />
+		<Node Id="CDorst.Entities.FooBars" />
+		<Node Id="CDorst.Entities.FooBars.DatabaseContext" />
+		<Node Id="CDorst.Entities.FooBars.ApiController" />
+		<Node Id="CDorst.Entities.StaticFooBars" />
+		<Node Id="CDorst.Entities.StaticFooBars.DatabaseContext" />
+		<Node Id="CDorst.Entities.StaticFooBars.ApiController" />
+		<Node Id="CDorst.DevOps.Code.DataAccess.Metapackages.ApiControllers" />
 		<Node Id="CDorst.Azure.Storage.Metapackage" />
+		<Node Id="CDorst.DevOps.Code.Entities.Metapackages.Annotations" />
 		<Node Id="CDorst.DevOps.Code.Entities.Metapackages.EntityFrameworkCore" />
+		<Node Id="CDorst.DevOps.Code.Entities.Metapackages.AnnotatedEntityFramework" />
 	</Nodes>
 	<Links>
 		<Link Source="CDorst.Azure.Storage.Connection.GetCloudStorageAccount" Target="CDorst.Azure.Storage.Table.GetTableClient" />
@@ -50,12 +65,35 @@
 		<Link Source="CDorst.DevOps.Build.AppVeyor.GetAzureTable" Target="CDorst.DevOps.Build.AppVeyor.AddRepositoryVersion" />
 		<Link Source="CDorst.DevOps.Build.AppVeyor.GetAzureTable" Target="CDorst.DevOps.Build.AppVeyor.GetBuildRecord" />
 		<Link Source="CDorst.DevOps.Build.AppVeyor.GetAzureTable" Target="CDorst.DevOps.Build.AppVeyor.GetRepositoryVersionRecord" />
+		<Link Source="CDorst.DevOps.Code.DataAccess.Interfaces.CacheService" Target="CDorst.DevOps.Code.DataAccess.Services.CachedDataRepository" />
+		<Link Source="CDorst.DevOps.Code.DataAccess.Interfaces.CacheService" Target="CDorst.DevOps.Code.DataAccess.Services.CacheService" />
+		<Link Source="CDorst.DevOps.Code.DataAccess.Interfaces.Repository" Target="CDorst.DevOps.Code.DataAccess.Metapackages.ApiControllers" />
+		<Link Source="CDorst.DevOps.Code.DataAccess.Interfaces.Repository" Target="CDorst.DevOps.Code.DataAccess.Services.DataRepository" />
+		<Link Source="CDorst.DevOps.Code.DataAccess.Metapackages.ApiControllers" Target="CDorst.Entities.FooBars.ApiController" />
+		<Link Source="CDorst.DevOps.Code.DataAccess.Metapackages.ApiControllers" Target="CDorst.Entities.StaticFooBars.ApiController" />
+		<Link Source="CDorst.DevOps.Code.DataAccess.Options.CacheExpiration" Target="CDorst.DevOps.Code.DataAccess.Services.CacheService" />
+		<Link Source="CDorst.DevOps.Code.DataAccess.Services.DataRepository" Target="CDorst.DevOps.Code.DataAccess.Services.CachedDataRepository" />
 		<Link Source="CDorst.DevOps.Code.Entities.EntityTypeLedger" Target="CDorst.DevOps.Code.Entities.EntityTypeLedger.Builder" />
 		<Link Source="CDorst.DevOps.Code.Entities.EntityTypeLedger" Target="CDorst.DevOps.Code.Entities.GetEntityTypeRecord" />
 		<Link Source="CDorst.DevOps.Code.Entities.EntityTypeLedger.Builder" Target="CDorst.DevOps.Code.Entities.AddEntityTypeRecord" />
 		<Link Source="CDorst.DevOps.Code.Entities.GetAzureTable" Target="CDorst.DevOps.Code.Entities.AddEntityTypeRecord" />
 		<Link Source="CDorst.DevOps.Code.Entities.GetAzureTable" Target="CDorst.DevOps.Code.Entities.GetEntityTypeRecord" />
+		<Link Source="CDorst.DevOps.Code.Entities.Interfaces.Entity" Target="CDorst.DevOps.Code.DataAccess.Interfaces.Repository" />
 		<Link Source="CDorst.DevOps.Code.Entities.Interfaces.Entity" Target="CDorst.DevOps.Code.Entities.Interfaces.StaticEntity" />
+		<Link Source="CDorst.DevOps.Code.Entities.Interfaces.Entity" Target="CDorst.Entities.FooBars" />
+		<Link Source="CDorst.DevOps.Code.Entities.Interfaces.StaticEntity" Target="CDorst.Entities.StaticFooBars" />
+		<Link Source="CDorst.DevOps.Code.Entities.Metapackages.AnnotatedEntityFramework" Target="CDorst.DevOps.Code.DataAccess.Services.CacheService" />
+		<Link Source="CDorst.DevOps.Code.Entities.Metapackages.Annotations" Target="CDorst.DevOps.Code.Entities.Metapackages.AnnotatedEntityFramework" />
+		<Link Source="CDorst.DevOps.Code.Entities.Metapackages.Annotations" Target="CDorst.Entities.FooBars" />
+		<Link Source="CDorst.DevOps.Code.Entities.Metapackages.Annotations" Target="CDorst.Entities.StaticFooBars" />
+		<Link Source="CDorst.DevOps.Code.Entities.Metapackages.EntityFrameworkCore" Target="CDorst.DevOps.Code.DataAccess.Interfaces.Repository" />
+		<Link Source="CDorst.DevOps.Code.Entities.Metapackages.EntityFrameworkCore" Target="CDorst.DevOps.Code.Entities.Metapackages.AnnotatedEntityFramework" />
+		<Link Source="CDorst.DevOps.Code.Entities.Metapackages.EntityFrameworkCore" Target="CDorst.Entities.FooBars.DatabaseContext" />
+		<Link Source="CDorst.Entities.FooBars" Target="CDorst.Entities.FooBars.DatabaseContext" />
+		<Link Source="CDorst.Entities.FooBars.DatabaseContext" Target="CDorst.Entities.FooBars.ApiController" />
+		<Link Source="CDorst.Entities.FooBars.DatabaseContext" Target="CDorst.Entities.StaticFooBars.DatabaseContext" />
+		<Link Source="CDorst.Entities.StaticFooBars" Target="CDorst.Entities.StaticFooBars.DatabaseContext" />
+		<Link Source="CDorst.Entities.StaticFooBars.DatabaseContext" Target="CDorst.Entities.StaticFooBars.ApiController" />
 	</Links>
 </DirectedGraph>
 

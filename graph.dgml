@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <DirectedGraph Title="SourceCodeRepositoryGraph" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
 	<Nodes>
+		<Node Id="CDorst.Azure.Storage.Options.Connection" />
+		<Node Id="CDorst.Azure.Storage.Services.Account.Interfaces" />
+		<Node Id="CDorst.Azure.Storage.Services.Account.Getter" />
+		<Node Id="CDorst.Azure.Storage.Services.Account.Extensions" />
 		<Node Id="CDorst.DevOps.Code.DataAccess.Interfaces.CacheService" />
 		<Node Id="CDorst.DevOps.Code.DataAccess.Options.CacheExpiration" />
 		<Node Id="CDorst.DevOps.Code.DataAccess.Services.CacheService" />
@@ -53,9 +57,6 @@
 		<Node Id="CDorst.Addresses.Addresses" />
 		<Node Id="CDorst.Addresses.Addresses.DatabaseContext" />
 		<Node Id="CDorst.Addresses.Addresses.ApiController" />
-		<Node Id="CDorst.Houses.Houses" />
-		<Node Id="CDorst.Houses.Houses.DatabaseContext" />
-		<Node Id="CDorst.Houses.Houses.ApiController" />
 		<Node Id="CDorst.Entities.FooBars" />
 		<Node Id="CDorst.Entities.FooBars.DatabaseContext" />
 		<Node Id="CDorst.Entities.FooBars.ApiController" />
@@ -71,7 +72,6 @@
 	<Links>
 		<Link Source="CDorst.Addresses.Addresses" Target="CDorst.Addresses.Addresses.DatabaseContext" />
 		<Link Source="CDorst.Addresses.Addresses.DatabaseContext" Target="CDorst.Addresses.Addresses.ApiController" />
-		<Link Source="CDorst.Addresses.Addresses.DatabaseContext" Target="CDorst.Houses.Houses.DatabaseContext" />
 		<Link Source="CDorst.Addresses.Cities" Target="CDorst.Addresses.Cities.DatabaseContext" />
 		<Link Source="CDorst.Addresses.Cities.DatabaseContext" Target="CDorst.Addresses.Cities.ApiController" />
 		<Link Source="CDorst.Addresses.Cities.DatabaseContext" Target="CDorst.Addresses.StateCities.DatabaseContext" />
@@ -96,9 +96,14 @@
 		<Link Source="CDorst.Azure.Storage.Connection.GetCloudStorageAccount" Target="CDorst.Azure.Storage.Table.GetTableClient" />
 		<Link Source="CDorst.Azure.Storage.Connection.GetConnectionString" Target="CDorst.Azure.Storage.Table.GetAzureTable" />
 		<Link Source="CDorst.Azure.Storage.Metapackage" Target="CDorst.Azure.Storage.Connection.GetCloudStorageAccount" />
+		<Link Source="CDorst.Azure.Storage.Metapackage" Target="CDorst.Azure.Storage.Options.Connection" />
+		<Link Source="CDorst.Azure.Storage.Metapackage" Target="CDorst.Azure.Storage.Services.Account.Interfaces" />
 		<Link Source="CDorst.Azure.Storage.Metapackage" Target="CDorst.DevOps.Build.AppVeyor.AzureStorageTableLedger" />
 		<Link Source="CDorst.Azure.Storage.Metapackage" Target="CDorst.DevOps.Build.AppVeyor.AzureStorageTableVersionLedger" />
 		<Link Source="CDorst.Azure.Storage.Metapackage" Target="CDorst.DevOps.Code.Entities.EntityTypeLedger" />
+		<Link Source="CDorst.Azure.Storage.Options.Connection" Target="CDorst.Azure.Storage.Services.Account.Getter" />
+		<Link Source="CDorst.Azure.Storage.Services.Account.Getter" Target="CDorst.Azure.Storage.Services.Account.Extensions" />
+		<Link Source="CDorst.Azure.Storage.Services.Account.Interfaces" Target="CDorst.Azure.Storage.Services.Account.Getter" />
 		<Link Source="CDorst.Azure.Storage.Table.GetAzureTable" Target="CDorst.DevOps.Build.AppVeyor.GetAzureTable" />
 		<Link Source="CDorst.Azure.Storage.Table.GetAzureTable" Target="CDorst.DevOps.Code.Entities.GetAzureTable" />
 		<Link Source="CDorst.Azure.Storage.Table.GetOrCreateTableReference" Target="CDorst.Azure.Storage.Table.GetAzureTable" />
@@ -130,7 +135,6 @@
 		<Link Source="CDorst.DevOps.Code.DataAccess.Metapackages.ApiControllers" Target="CDorst.Addresses.ZipCodes.ApiController" />
 		<Link Source="CDorst.DevOps.Code.DataAccess.Metapackages.ApiControllers" Target="CDorst.Entities.FooBars.ApiController" />
 		<Link Source="CDorst.DevOps.Code.DataAccess.Metapackages.ApiControllers" Target="CDorst.Entities.StaticFooBars.ApiController" />
-		<Link Source="CDorst.DevOps.Code.DataAccess.Metapackages.ApiControllers" Target="CDorst.Houses.Houses.ApiController" />
 		<Link Source="CDorst.DevOps.Code.DataAccess.Options.CacheExpiration" Target="CDorst.DevOps.Code.DataAccess.Services.CacheService" />
 		<Link Source="CDorst.DevOps.Code.DataAccess.Services.DataRepository" Target="CDorst.DevOps.Code.DataAccess.Services.CachedDataRepository" />
 		<Link Source="CDorst.DevOps.Code.Entities.EntityTypeLedger" Target="CDorst.DevOps.Code.Entities.EntityTypeLedger.Builder" />
@@ -150,7 +154,6 @@
 		<Link Source="CDorst.DevOps.Code.Entities.Interfaces.StaticEntity" Target="CDorst.Addresses.StreetAddressLines" />
 		<Link Source="CDorst.DevOps.Code.Entities.Interfaces.StaticEntity" Target="CDorst.Addresses.ZipCodes" />
 		<Link Source="CDorst.DevOps.Code.Entities.Interfaces.StaticEntity" Target="CDorst.Entities.StaticFooBars" />
-		<Link Source="CDorst.DevOps.Code.Entities.Interfaces.StaticEntity" Target="CDorst.Houses.Houses" />
 		<Link Source="CDorst.DevOps.Code.Entities.Metapackages.AnnotatedEntityFramework" Target="CDorst.DevOps.Code.DataAccess.Services.CacheService" />
 		<Link Source="CDorst.DevOps.Code.Entities.Metapackages.Annotations" Target="CDorst.Addresses.Addresses" />
 		<Link Source="CDorst.DevOps.Code.Entities.Metapackages.Annotations" Target="CDorst.Addresses.Cities" />
@@ -163,7 +166,6 @@
 		<Link Source="CDorst.DevOps.Code.Entities.Metapackages.Annotations" Target="CDorst.DevOps.Code.Entities.Metapackages.AnnotatedEntityFramework" />
 		<Link Source="CDorst.DevOps.Code.Entities.Metapackages.Annotations" Target="CDorst.Entities.FooBars" />
 		<Link Source="CDorst.DevOps.Code.Entities.Metapackages.Annotations" Target="CDorst.Entities.StaticFooBars" />
-		<Link Source="CDorst.DevOps.Code.Entities.Metapackages.Annotations" Target="CDorst.Houses.Houses" />
 		<Link Source="CDorst.DevOps.Code.Entities.Metapackages.EntityFrameworkCore" Target="CDorst.Addresses.States.DatabaseContext" />
 		<Link Source="CDorst.DevOps.Code.Entities.Metapackages.EntityFrameworkCore" Target="CDorst.DevOps.Code.DataAccess.Interfaces.Repository" />
 		<Link Source="CDorst.DevOps.Code.Entities.Metapackages.EntityFrameworkCore" Target="CDorst.DevOps.Code.Entities.Metapackages.AnnotatedEntityFramework" />
@@ -173,8 +175,6 @@
 		<Link Source="CDorst.Entities.FooBars.DatabaseContext" Target="CDorst.Entities.StaticFooBars.DatabaseContext" />
 		<Link Source="CDorst.Entities.StaticFooBars" Target="CDorst.Entities.StaticFooBars.DatabaseContext" />
 		<Link Source="CDorst.Entities.StaticFooBars.DatabaseContext" Target="CDorst.Entities.StaticFooBars.ApiController" />
-		<Link Source="CDorst.Houses.Houses" Target="CDorst.Houses.Houses.DatabaseContext" />
-		<Link Source="CDorst.Houses.Houses.DatabaseContext" Target="CDorst.Houses.Houses.ApiController" />
 	</Links>
 </DirectedGraph>
 

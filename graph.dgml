@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <DirectedGraph Title="SourceCodeRepositoryGraph" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
 	<Nodes>
-		<Node Id="CDorst.Azure.Storage.Options.Connection" />
-		<Node Id="CDorst.Azure.Storage.Services.Account.Interfaces" />
-		<Node Id="CDorst.Azure.Storage.Services.Account.Getter" />
-		<Node Id="CDorst.Azure.Storage.Services.Account.Extensions" />
+		<Node Id="CDorst.Cloud.Azure.Storage.Options.Connection" />
+		<Node Id="CDorst.Cloud.Azure.Storage.Services.Account.Interfaces.CloudStorageAccountGetter" />
+		<Node Id="CDorst.Cloud.Azure.Storage.Services.Account.Getter" />
+		<Node Id="CDorst.Cloud.Azure.Storage.Services.Account.Extensions" />
+		<Node Id="CDorst.Cloud.Azure.Storage.Services.Blobs.Interfaces.BlobContainerCreator" />
+		<Node Id="CDorst.Cloud.Azure.Storage.Services.Blobs.Interfaces.BlobContainerReferenceGetter" />
+		<Node Id="CDorst.Cloud.Azure.Storage.Services.Blobs.Interfaces.CloudBlobClientGetter" />
+		<Node Id="CDorst.Cloud.Azure.Storage.Services.Blobs.Interfaces.ExistingContainerBlobReferenceGetter" />
+		<Node Id="CDorst.Cloud.Azure.Storage.Services.Blobs.BlobContainerCreation" />
+		<Node Id="CDorst.Cloud.Azure.Storage.Services.Blobs.BlobContainerReference" />
+		<Node Id="CDorst.Cloud.Azure.Storage.Services.Blobs.BlobClientGetter" />
+		<Node Id="CDorst.Cloud.Azure.Storage.Services.Blobs.BlobReference" />
 		<Node Id="CDorst.DevOps.Code.DataAccess.Interfaces.CacheService" />
 		<Node Id="CDorst.DevOps.Code.DataAccess.Options.CacheExpiration" />
 		<Node Id="CDorst.DevOps.Code.DataAccess.Services.CacheService" />
@@ -96,19 +104,30 @@
 		<Link Source="CDorst.Azure.Storage.Connection.GetCloudStorageAccount" Target="CDorst.Azure.Storage.Table.GetTableClient" />
 		<Link Source="CDorst.Azure.Storage.Connection.GetConnectionString" Target="CDorst.Azure.Storage.Table.GetAzureTable" />
 		<Link Source="CDorst.Azure.Storage.Metapackage" Target="CDorst.Azure.Storage.Connection.GetCloudStorageAccount" />
-		<Link Source="CDorst.Azure.Storage.Metapackage" Target="CDorst.Azure.Storage.Options.Connection" />
-		<Link Source="CDorst.Azure.Storage.Metapackage" Target="CDorst.Azure.Storage.Services.Account.Interfaces" />
+		<Link Source="CDorst.Azure.Storage.Metapackage" Target="CDorst.Cloud.Azure.Storage.Options.Connection" />
+		<Link Source="CDorst.Azure.Storage.Metapackage" Target="CDorst.Cloud.Azure.Storage.Services.Account.Interfaces.CloudStorageAccountGetter" />
+		<Link Source="CDorst.Azure.Storage.Metapackage" Target="CDorst.Cloud.Azure.Storage.Services.Blobs.Interfaces.BlobContainerReferenceGetter" />
+		<Link Source="CDorst.Azure.Storage.Metapackage" Target="CDorst.Cloud.Azure.Storage.Services.Blobs.Interfaces.CloudBlobClientGetter" />
+		<Link Source="CDorst.Azure.Storage.Metapackage" Target="CDorst.Cloud.Azure.Storage.Services.Blobs.Interfaces.ExistingContainerBlobReferenceGetter" />
 		<Link Source="CDorst.Azure.Storage.Metapackage" Target="CDorst.DevOps.Build.AppVeyor.AzureStorageTableLedger" />
 		<Link Source="CDorst.Azure.Storage.Metapackage" Target="CDorst.DevOps.Build.AppVeyor.AzureStorageTableVersionLedger" />
 		<Link Source="CDorst.Azure.Storage.Metapackage" Target="CDorst.DevOps.Code.Entities.EntityTypeLedger" />
-		<Link Source="CDorst.Azure.Storage.Options.Connection" Target="CDorst.Azure.Storage.Services.Account.Getter" />
-		<Link Source="CDorst.Azure.Storage.Services.Account.Getter" Target="CDorst.Azure.Storage.Services.Account.Extensions" />
-		<Link Source="CDorst.Azure.Storage.Services.Account.Interfaces" Target="CDorst.Azure.Storage.Services.Account.Getter" />
 		<Link Source="CDorst.Azure.Storage.Table.GetAzureTable" Target="CDorst.DevOps.Build.AppVeyor.GetAzureTable" />
 		<Link Source="CDorst.Azure.Storage.Table.GetAzureTable" Target="CDorst.DevOps.Code.Entities.GetAzureTable" />
 		<Link Source="CDorst.Azure.Storage.Table.GetOrCreateTableReference" Target="CDorst.Azure.Storage.Table.GetAzureTable" />
 		<Link Source="CDorst.Azure.Storage.Table.GetTableClient" Target="CDorst.Azure.Storage.Table.GetTableReference" />
 		<Link Source="CDorst.Azure.Storage.Table.GetTableReference" Target="CDorst.Azure.Storage.Table.GetOrCreateTableReference" />
+		<Link Source="CDorst.Cloud.Azure.Storage.Options.Connection" Target="CDorst.Cloud.Azure.Storage.Services.Account.Getter" />
+		<Link Source="CDorst.Cloud.Azure.Storage.Services.Account.Getter" Target="CDorst.Cloud.Azure.Storage.Services.Account.Extensions" />
+		<Link Source="CDorst.Cloud.Azure.Storage.Services.Account.Interfaces.CloudStorageAccountGetter" Target="CDorst.Cloud.Azure.Storage.Services.Account.Getter" />
+		<Link Source="CDorst.Cloud.Azure.Storage.Services.Account.Interfaces.CloudStorageAccountGetter" Target="CDorst.Cloud.Azure.Storage.Services.Blobs.BlobClientGetter" />
+		<Link Source="CDorst.Cloud.Azure.Storage.Services.Blobs.Interfaces.BlobContainerCreator" Target="CDorst.Cloud.Azure.Storage.Services.Blobs.BlobContainerCreation" />
+		<Link Source="CDorst.Cloud.Azure.Storage.Services.Blobs.Interfaces.BlobContainerReferenceGetter" Target="CDorst.Cloud.Azure.Storage.Services.Blobs.BlobContainerReference" />
+		<Link Source="CDorst.Cloud.Azure.Storage.Services.Blobs.Interfaces.BlobContainerReferenceGetter" Target="CDorst.Cloud.Azure.Storage.Services.Blobs.BlobReference" />
+		<Link Source="CDorst.Cloud.Azure.Storage.Services.Blobs.Interfaces.CloudBlobClientGetter" Target="CDorst.Cloud.Azure.Storage.Services.Blobs.BlobClientGetter" />
+		<Link Source="CDorst.Cloud.Azure.Storage.Services.Blobs.Interfaces.CloudBlobClientGetter" Target="CDorst.Cloud.Azure.Storage.Services.Blobs.BlobContainerCreation" />
+		<Link Source="CDorst.Cloud.Azure.Storage.Services.Blobs.Interfaces.CloudBlobClientGetter" Target="CDorst.Cloud.Azure.Storage.Services.Blobs.BlobContainerReference" />
+		<Link Source="CDorst.Cloud.Azure.Storage.Services.Blobs.Interfaces.ExistingContainerBlobReferenceGetter" Target="CDorst.Cloud.Azure.Storage.Services.Blobs.BlobReference" />
 		<Link Source="CDorst.DevOps.Build.AppVeyor.AzureStorageTableLedger" Target="CDorst.DevOps.Build.AppVeyor.AzureStorageTableLedger.Builder" />
 		<Link Source="CDorst.DevOps.Build.AppVeyor.AzureStorageTableLedger" Target="CDorst.DevOps.Build.AppVeyor.GetAzureTable" />
 		<Link Source="CDorst.DevOps.Build.AppVeyor.AzureStorageTableLedger" Target="CDorst.DevOps.Build.AppVeyor.GetBuildRecord" />
